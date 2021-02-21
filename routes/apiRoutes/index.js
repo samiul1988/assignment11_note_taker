@@ -30,7 +30,7 @@ router.delete('/notes/:id', (req, res) => {
     const notes = readNotes();
 
     if (!req.params.id) {
-        res.status(400).send('No id found.');
+        res.status(400).send('No matching id found.');
     } else {
         const deletedNote = deleteNote(req.params.id, notes);
         res.json(deletedNote);

@@ -1,17 +1,20 @@
 // Required modules
 const express = require('express');
 
+// Import routes 
+const apiRoutes = require('./routes/apiRoutes');
+const htmlRoutes = require('./routes/htmlRoutes');
+
+// Define port number 
 const PORT = process.env.PORT || 3001;
 
 const app = express();
-const apiRoutes = require('./routes/apiRoutes');
-const htmlRoutes = require('./routes/htmlRoutes');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 
-// Use apiRoutes
+// Use Routes
 app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 

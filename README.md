@@ -33,10 +33,26 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
 * The project was developed from a starter code provided in the assignment instruction page.
 * Basic considerations were as follows:
-    * Used  
+    * The application uses a ```db.json``` file on the back end that is used to store and retrieve notes using the ```fs``` module.
+    * The following HTML routes were created (followed similar pattern as outlined in Module 11 lesson example):
+        * ```GET /```:  returns the index.html file.
+        * ```GET /notes```:  returns the notes.html file.
+        * ```GET *```: returns the index.html file.
+    * The following API routes were created:
+        * ```GET /api/notes```: reads the db.json file and returns all saved notes as JSON.
+        * ```POST /api/notes```: receives a new note to save on the request body, add it to the db.json file, and then returns the new note to the client.
+        * ```DELETE /api/notes/:id```: receives a query parameter containing the id of a note to delete, reads all notes from the db.json file, removes the note with the given id property, and then rewrites the notes to the db.json file.
 
-### Sample HTML file generated from this application
-[Sample HTML File](./sample/team-profile.html)
-#### Output Screenshot
-![HTML File Output](./assets/images/Sample_assignment11.png)
+#### Output Screenshots
+##### Landing Page
+![Landing Page](./public/assets/images/screenshot1.png)
+##### Empty Notes Page
+![Notes Page 1](./public/assets/images/screenshot2.png)
+##### Notes Page With Some Random Notes
+![Notes Page 2](./public/assets/images/screenshot3.png)
+##### Sample data in ```db.json``` file
+![data](./public/assets/images/screenshot4.png)
 
+
+#### Link of Deployed Application on Heroku
+[Application Link](https://assignment11-note-taker.herokuapp.com/)
